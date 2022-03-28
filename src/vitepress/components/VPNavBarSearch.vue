@@ -16,9 +16,14 @@ const metaKey = ref()
 
 onMounted(() => {
   // meta key detect (same logic as in @docsearch/js)
-  metaKey.value.textContent = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
-    ? '⌘'
-    : 'Ctrl'
+  // fix: VPNavBarSearch.vue:19 Uncaught (in promise) TypeError: Cannot set properties of undefined (setting 'textContent')
+  // 当屏蔽algolia时报错
+  if(metaKey.value){
+    metaKey.value.textContent = /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)
+      ? '⌘'
+      : 'Ctrl'
+  }
+
   const handleSearchHotKey = (e: KeyboardEvent) => {
     if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault()

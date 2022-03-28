@@ -10,7 +10,7 @@ const route = useRoute()
 const router = useRouter()
 
 onMounted(() => {
-  initialize(theme.value.algolia)
+  theme.value.algolia && initialize(theme.value.algolia)
   setTimeout(poll, 16)
 })
 
