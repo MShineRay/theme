@@ -1,0 +1,13 @@
+docs/
+test/
+.idea/
+README-Inner.MD
+.git/
+.vscode/
+.editorconfig
+.eslintignore
+.gitignore
+.prettierrc
+node_modules/
+coverage/
+demo/

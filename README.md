@@ -1,12 +1,7 @@
-# Vue Theme
-
-This is the [VitePress](https://vitepress.vuejs.org/) theme for the official Vue documentation at `vuejs.org`.
-
-Please note this theme is solely dedicated for `vuejs.org` and isn't meant to be used as a content-neutral theme. It does **not** follow semver and may contain hard-coded logic specific to the Vue documentation.
+# Theme Vue Base
+基于@vue/theme v1.0.1进行的精简，用于github
 
 ## Development Setup
-
-This repo can be developed on its own since it is a self-contained VitePress theme. Make sure to use [pnpm](https://pnpm.io/) as the package manager when installing deps. A demo app is available in `/demo` and can be run with `npm run dev`:
 
 ```bash
 $ pnpm install
@@ -15,13 +10,10 @@ $ npm run dev
 
 ## Developing with Real Content
 
-To work on this theme in the context of the `vuejs.org` website requires cloning both repos and linking the theme into the docs repo:
-
 1. Clone repositories:
 
    ```bash
-   git clone git@github.com:vuejs/docs.git
-   git clone git@github.com:vuejs/theme.git
+   git clone git@github.com:MShineRay/theme.git
    ```
 
 2. Link theme into docs repo:
@@ -29,21 +21,8 @@ To work on this theme in the context of the `vuejs.org` website requires cloning
    ```bash
    # In ./theme
    pnpm install
-   # Make @vue/theme available for global linking
+   # Make @a0znpm/theme-vue-base available for global linking
    pnpm link --global
-
-   # in ./docs
-   pnpm install
-   # Link teme
-   pnpm link --global @vue/theme
-   ```
-
-3. Start VitePress server:
-
-   ```bash
-   # in ./docs
-   pnpm run dev
-   ```
 
 ### Available Scripts
 
@@ -68,4 +47,4 @@ $ npm run type
 
 [MIT](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2021-present Evan You
+Copyright (c) 2021-present
