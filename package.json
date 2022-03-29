@@ -1,6 +1,6 @@
 {
   "name": "@a0znpm/theme-vue-base",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "基于@vue/theme v1.0.1进行的精简，用于github",
   "main": "src/index.ts",
   "exports": {

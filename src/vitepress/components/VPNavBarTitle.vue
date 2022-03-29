@@ -3,12 +3,17 @@ import { useData } from 'vitepress'
 const { theme } = useData()
 
 const storageKey = 'vue-theme-appearance'
+const isDark = typeof localStorage !== 'undefined' ? isDarkFn() : () => {}
 
-function isDark() {
-  let userPreference = localStorage.getItem(storageKey) || 'auto'
-  const query = window.matchMedia(`(prefers-color-scheme: dark)`)
-  return userPreference === 'auto' ? query.matches : userPreference === 'dark'
+function isDarkFn() {
+  const fn = () => {
+    let userPreference = localStorage.getItem(storageKey) || 'auto'
+    const query = window.matchMedia(`(prefers-color-scheme: dark)`)
+    return userPreference === 'auto' ? query.matches : userPreference === 'dark'
+  }
+  return fn
 }
+
 </script>
 
 
