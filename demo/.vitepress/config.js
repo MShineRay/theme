@@ -24,17 +24,18 @@ module.exports = (async () => {
 
     themeConfig: {
       logo: '/img/logo-vue.svg',
-
+      logoDark: '/img/logo-vue-dark.svg',
+      logoText: 'Test',
       // algolia: {
       //   indexName: 'vuejs-v3',
       //   appId: 'BH4D9OD16A',
       //   apiKey: 'bc6e8acb44ed4179c30d0a45d6140d3f'
       // },
 
-      carbonAds: {
-        code: 'CEBDT27Y',
-        placement: 'vuejsorg'
-      },
+      // carbonAds: {
+      //   code: 'CEBDT27Y',
+      //   placement: 'vuejsorg'
+      // },
 
       socialLinks: [
         { icon: 'github', link: 'https://github.com/vuejs/vue' },

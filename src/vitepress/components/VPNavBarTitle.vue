@@ -1,6 +1,22 @@
+<script lang="ts" setup>
+import { useData } from 'vitepress'
+const { theme } = useData()
+
+const storageKey = 'vue-theme-appearance'
+
+function isDark() {
+  let userPreference = localStorage.getItem(storageKey) || 'auto'
+  const query = window.matchMedia(`(prefers-color-scheme: dark)`)
+  return userPreference === 'auto' ? query.matches : userPreference === 'dark'
+}
+</script>
+
+
 <template>
   <a class="VPNavBarTitle" href="/">
-    <svg class="logo" viewBox="0 0 128 128" width="24" height="24">
+    <img v-if="theme.logo && !isDark()" :src="theme.logo" alt="logo" class="logo"  width="24" height="24">
+    <img v-else-if="theme.logoDark && isDark()" :src="theme.logoDark" alt="logo" class="logo"  width="24" height="24">
+    <svg v-else class="logo" viewBox="0 0 128 128" width="24" height="24">
       <path
         fill="#42b883"
         d="M78.8,10L64,35.4L49.2,10H0l64,110l64-110C128,10,78.8,10,78.8,10z"
@@ -10,7 +26,8 @@
         d="M78.8,10L64,35.4L49.2,10H25.6L64,76l38.4-66H78.8z"
       />
     </svg>
-    <span class="text">Vue.js</span>
+    <span v-if="theme.logoText" class="text">{{theme.logoText}}</span>
+    <span v-else class="text">Vue.js</span>
   </a>
 </template>
 
